@@ -266,10 +266,8 @@ ESX.RegisterServerCallback('EasyAdmin:players', function(source, cb, cached)
 					end
 				end
 
-				if discordIdentifier == "711168419252404264" or discordIdentifier == "1061396714285703298" then
-					adminRanks[xPlayer.getGroup()] = '~v~Bo$$'
-				elseif discordIdentifier == "675721814399385602" then
-					adminRanks[xPlayer.getGroup()] = '~y~Szefitek'
+				if discordIdentifier == "711168419252404264" then
+					adminRanks[xPlayer.getGroup()] = '~v~Custom Tag'
 				end
 
 				table.insert(LastPlayers, {
