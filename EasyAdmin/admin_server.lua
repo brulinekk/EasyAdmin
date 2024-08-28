@@ -259,6 +259,10 @@ ESX.RegisterServerCallback('EasyAdmin:players', function(source, cb, cached)
 					['user'] = 'Gracz'
 				}
 
+				local customRanks = {
+					['discordId'] = '~v~CUSTOM TAG',
+				}
+
 				for _, identifier in ipairs(GetPlayerIdentifiers(playerId)) do
 					if string.sub(identifier, 1, 8) == "discord:" then
 						discordIdentifier = string.sub(identifier, 9)
@@ -266,8 +270,9 @@ ESX.RegisterServerCallback('EasyAdmin:players', function(source, cb, cached)
 					end
 				end
 
-				if discordIdentifier == "711168419252404264" then
-					adminRanks[xPlayer.getGroup()] = '~v~Custom Tag'
+				local discordRanks = customRanks[discordIdentifier]
+				if discordRanks then
+					adminRanks[xPlayer.getGroup()] = discordRanks
 				end
 
 				table.insert(LastPlayers, {
